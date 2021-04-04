@@ -17,6 +17,10 @@ class App extends Component {
     };
   }
 
+  createOrder = (order) => {
+    alert(`you bought a ${order.cartItems[0].title}`);
+  };
+
   sortProducts = (e) => {
     const sort = e.target.value;
     this.setState((state) => ({
@@ -109,6 +113,7 @@ class App extends Component {
               <Cart
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
               />
             </div>
           </div>
