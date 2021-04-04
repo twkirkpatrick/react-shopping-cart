@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 export default class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showCheckout: false };
+  }
   render() {
     const { cartItems } = this.props;
     return (
@@ -42,7 +46,12 @@ export default class Cart extends Component {
                 <div>
                   Total: ${cartItems.reduce((a, c) => a + c.price * c.count, 0)}
                 </div>
-                <button className="button primary">Proceed</button>
+                <button
+                  onClick={this.setState({ showCheckout: true })}
+                  className="button primary"
+                >
+                  Proceed
+                </button>
               </div>
             </div>
           )}
