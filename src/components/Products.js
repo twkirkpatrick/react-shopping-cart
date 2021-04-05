@@ -68,6 +68,18 @@ export default class Products extends Component {
                       </span>
                     ))}
                   </p>
+                  <div className="product-price">
+                    <div>${product.price}</div>
+                    <button
+                      onClick={() => {
+                        this.props.addToCart(product);
+                        this.closeModal();
+                      }}
+                      className="button primary"
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
                 </div>
               </div>
             </Zoom>
